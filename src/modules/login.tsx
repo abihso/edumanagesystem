@@ -35,8 +35,8 @@ const Login = () => {
                         <AccountGraduationIcon className='text-white text-2xl sm:text-3xl md:text-4xl' />
                     </div>
                     <div className='flex-1'>
-                        <p className='textColor1 font-bold text-base sm:text-lg md:text-xl break-words'>EduManage System</p>
-                        <p className='textColor2 text-xs sm:text-sm break-words'>Basic School Management System</p>
+                        <p className='textColor1 font-bold text-base sm:text-lg md:text-xl wrap-break-words'>EduManage System</p>
+                        <p className='textColor2 text-xs sm:text-sm wrap-break-words'>Basic School Management System</p>
                     </div>
                 </div>
                 
@@ -50,19 +50,19 @@ const Login = () => {
                 <div className='mt-4 sm:mt-6 md:mt-8 lg:mt-10 xl:mt-12 space-y-1.5 sm:space-y-2'>
                     <p className='textColor2 text-xs sm:text-sm font-light flex items-start gap-1.5 sm:gap-2'>
                         <span className='text-blue-500 text-sm sm:text-base mt-0.5'>•</span>
-                        <span className='flex-1 break-words'>Academic Management & AI-powered Predictions</span>
+                        <span className='flex-1 wrap-break-words'>Academic Management & AI-powered Predictions</span>
                     </p>
                     <p className='textColor2 text-xs sm:text-sm font-light flex items-start gap-1.5 sm:gap-2'>
                         <span className='text-blue-500 text-sm sm:text-base mt-0.5'>•</span>
-                        <span className='flex-1 break-words'>Financial Planning & Smart Forecasting</span>
+                        <span className='flex-1 wrap-break-words'>Financial Planning & Smart Forecasting</span>
                     </p>
                     <p className='textColor2 text-xs sm:text-sm font-light flex items-start gap-1.5 sm:gap-2'>
                         <span className='text-blue-500 text-sm sm:text-base mt-0.5'>•</span>
-                        <span className='flex-1 break-words'>Account & Supply Chain Optimization</span>
+                        <span className='flex-1 wrap-break-words'>Account & Supply Chain Optimization</span>
                     </p>
                     <p className='textColor2 text-xs sm:text-sm font-light flex items-start gap-1.5 sm:gap-2'>
                         <span className='text-blue-500 text-sm sm:text-base mt-0.5'>•</span>
-                        <span className='flex-1 break-words'>Real-time Transportation & Route Planning</span>
+                        <span className='flex-1 wrap-break-words'>Real-time Transportation & Route Planning</span>
                     </p>
                 </div>
                 

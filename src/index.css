@@ -6,7 +6,6 @@
 *{
   font-family: "Inter";
 }
-
 .textColor1 {
     color : #0C0332
 }
@@ -22,8 +21,12 @@
 .textColor5 {
     color : #969696                                             
 }
-textColor6 {
-    color : #463E3E                                             
+.textColor6 {
+    color : #7A7B7B                                             
+}
+
+.backgroundColor1 {
+    background-color: #f7fcff;
 }
 
 .gradient1 {
@@ -37,4 +40,24 @@ textColor6 {
 .gradient3 {
 
     background: linear-gradient(90deg, #E3E5FF 0%, #F3FFF4 48%, #FFFFFF 78%, #DEFFFC 100%  );
+}
+.gradient4 {
+
+    background: linear-gradient(120deg, #9d81f998 0%, #ff949436 39%, #b4f9bd5e 64%, #00f0ec60 100%  );
+}
+.gradient5 {
+
+    background: linear-gradient(120deg, #CDFFFB 0%, #FFEDED 39%, #E5FEE9 64%, #D8DAFE 100%  );
+}
+.gradient6 {
+
+    background: linear-gradient(50deg, #CBCEFF 0%, #FFE8E8 49%, #B7FFF9 100%  );
+}
+.gradient7 {
+
+    background: linear-gradient(190deg, #5381FF 0%, #55148B 100%  );
+}
+.gradient8 {
+
+    background: linear-gradient(50deg, #E3E5FF 0%, #FFFFFF 49%, #DEFFFC 100%  );
 }
