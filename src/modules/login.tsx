@@ -146,6 +146,16 @@ const Login = () => {
                 </div>
             </div>
         </div>
+
+        <p className='textColor2 text-xs sm:text-sm font-light text-center mt-20'>
+            © 2023 EduManageSystem. All rights reserved.
+        </p>
+        <p className='textColor2 text-xs sm:text-sm font-light text-center mt-2'>
+            Policies || Support || Help || Terms of Service || Privacy Policy
+        </p>
+        <p className='textColor2 text-xs sm:text-sm font-light text-center mt-2'>
+            EduManage(Basic School Management System(BSM)) version 1.0.0. Developed by AltBit Softwares.
+        </p>
     </div>
   )
 }
