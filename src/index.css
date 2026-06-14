@@ -7,7 +7,7 @@
   font-family: "Inter";
 }
 
-textColor1 {
+.textColor1 {
     color : #0C0332
 }
 .textColor2 {
@@ -16,7 +16,7 @@ textColor1 {
 .textColor3 {
     color : #2F88FF                                             
 }
-textColor4 {
+.textColor4 {
     color : #0A0332                                             
 }
 .textColor5 {

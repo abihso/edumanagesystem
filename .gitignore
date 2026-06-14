@@ -25,3 +25,25 @@ dist-ssr
 git remote add origin https://github.com/abihso/edumanagesystem.git
 git branch -M main
 git push -u origin main
+
+
+
+import ContentFilesNewspaperIcon from '@iconify-react/streamline-pixel/content-files-newspaper';
+import CartIcon from '@iconify-react/mdi/cart';
+import ScheduleIcon from '@iconify-react/material-symbols/schedule';
+import PerformanceIcon from '@iconify-react/mdi/performance';
+import GraphNewOutlineIcon from '@iconify-react/solar/graph-new-outline';
+import MoneyPaymentsCurrencyEuroDollarExchangeIcon from '@iconify-react/streamline-pixel/money-payments-currency-euro-dollar-exchange';
+import TransportIcon from '@iconify-react/arcticons/transport';
+import AnalyticsReportIcon from '@iconify-react/fluent-mdl2/analytics-report';
+import BooksIcon from '@iconify-react/mdi/books';
+import ProfileFillIcon from '@iconify-react/iconamoon/profile-fill';
+import HelpIcon from '@iconify-react/mdi/help';
+import SettingsOutlineIcon from '@iconify-react/material-symbols/settings-outline';
+import LogoutSolidIcon from '@iconify-react/basil/logout-solid';
+import MessageIcon from '@iconify-react/mage/message';
+import NotificationSolidIcon from '@iconify-react/clarity/notification-solid'; 
+import MenuIcon from '@iconify-react/material-symbols/menu';
+import DashboardIcon from '@iconify-react/material-symbols/dashboard';   
+import ArrowDropdownIcon from '@iconify-react/nrk/arrow-dropdown'; 
+import SearchIcon from '@iconify-react/tdesign/search';                                             
