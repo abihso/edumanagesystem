@@ -558,7 +558,7 @@ const Dashboard = () => {
 
           {/* Notice & AI Recommendations as Scrollable Horizontal */}
           <div className="flex gap-3 overflow-x-auto mt-4 pb-2 scrollbar-hide">
-            <div className="min-w-[280px] bg-white rounded-2xl p-3 shadow-sm">
+            <div className="min-w-70 bg-white rounded-2xl p-3 shadow-sm">
               <div className="flex justify-between items-center">
                 <p className="font-bold text-sm">Latest Notice</p>
                 <p className="text-[#3884FF] text-xs font-bold">View all</p>
@@ -575,7 +575,7 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="min-w-[280px] bg-white rounded-2xl p-3 shadow-sm">
+            <div className="min-w-70 bg-white rounded-2xl p-3 shadow-sm">
               <p className="font-bold text-sm">AI Recommendation</p>
               <div className="bg-[#EBF3FF] rounded-xl p-2 mt-2">
                 <p className="font-bold text-xs bg-[#D2DEFF] inline-block px-2 py-0.5 rounded">
