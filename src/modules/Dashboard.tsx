@@ -20,10 +20,6 @@ import DashboardIcon from '@iconify-react/material-symbols/dashboard';
 import ArrowDropdownIcon from '@iconify-react/nrk/arrow-dropdown';
 import SearchIcon from '@iconify-react/tdesign/search';
 import CloseIcon from '@iconify-react/material-symbols/close';
-import HomeIcon from '@iconify-react/mdi/home';
-import BookOpenIcon from '@iconify-react/mdi/book-open';
-import CalendarIcon from '@iconify-react/mdi/calendar';
-import ChartLineIcon from '@iconify-react/mdi/chart-line';
 import Images from '../assets/images';
 
 const Dashboard = () => {
