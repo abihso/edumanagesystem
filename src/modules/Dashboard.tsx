@@ -28,14 +28,7 @@ import Images from '../assets/images';
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState('home');
 
-  const navItems = [
-    { id: 'home', label: 'Home', icon: HomeIcon },
-    { id: 'courses', label: 'Courses', icon: BookOpenIcon },
-    { id: 'schedule', label: 'Schedule', icon: CalendarIcon },
-    { id: 'analytics', label: 'Stats', icon: ChartLineIcon },
-  ];
 
   const menuItems = [
     { icon: DashboardIcon, label: 'Dashboard' },
