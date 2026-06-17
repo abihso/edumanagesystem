@@ -8,6 +8,9 @@ import { useState } from "react";
 const CoursesPage = ({isSidebarCollapsed} : HomeProps) => {
   const [showDialogBox,setShowDialogBox] = useState(false)
   const [code, setCode] = useState("")
+  const handleSetCode = (value: String) => {
+    setCode(value.toString())
+  }
   return (
      <div className={`flex-1 transition-all duration-300 ${isSidebarCollapsed ? 'ml-16' : 'ml-64'} pt-15`}>
             <div className='backgroundColor1 min-h-screen'>
@@ -19,7 +22,7 @@ const CoursesPage = ({isSidebarCollapsed} : HomeProps) => {
                 <div className="grid grid-cols-12 gap-5 mt-4" >
                   {
                     [1,2,3,4,5,6,7,8,9,10].map((i) =><CourseDescription 
-                      setCode={setCode}
+                      setCode={handleSetCode}
                       setShowDialogBox={() => setShowDialogBox(true)}
                       courseCode={i.toString()}
                       key={i}
