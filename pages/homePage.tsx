@@ -14,7 +14,7 @@ const HomePage = ({ isSidebarCollapsed }: HomeProps) => {
           </p>
           <div className="grid grid-cols-12 mt-3 gap-4">
             <div className="col-span-8">
-              <div className="lg:h-32 rounded-3xl gradient5 flex justify-between py-5 px-5 shadow-2xl ">
+              <div className="lg:h-32 rounded-3xl gradient5 flex justify-between py-5 px-5 shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] ">
                 <div>
                   <p className="font-[1000] text-xl xl:text-3xl">
                     Welcome back, <span>Abih Solo</span>
@@ -29,7 +29,7 @@ const HomePage = ({ isSidebarCollapsed }: HomeProps) => {
                 </div>
               </div>
               <div className="grid grid-cols-12 gap-4 mt-4">
-                <div className="col-span-6 rounded-2xl min-h-40 shadow-2xl">
+                <div className="col-span-6 rounded-2xl min-h-40 shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)]">
                   <div className="pl-3 pt-2 pb-3">
                     <p className="font-bold">Post for Notice</p>
                     <p className="text-[10px] text-[#AEAEAE]">
@@ -111,7 +111,7 @@ const HomePage = ({ isSidebarCollapsed }: HomeProps) => {
                     </div>
                   </div>
                 </div>
-                <div className="col-span-6 rounded-2xl min-h-40 shadow-2xl">
+                <div className="col-span-6 rounded-2xl min-h-40 shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)]">
                   <div className="pl-3 pt-2 pb-3">
                     <p className="font-bold">AI Personalized Recommendations</p>
                     <p className="text-[10px] text-[#AEAEAE]">
@@ -160,7 +160,7 @@ const HomePage = ({ isSidebarCollapsed }: HomeProps) => {
                   </div>
                 </div>
               </div>
-              <div className="px-4 py-3 min-h-40 mt-7 mb-10 rounded-2xl shadow-2xl">
+              <div className="px-4 py-3 min-h-40 mt-7 mb-10 rounded-2xl shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)]">
                 <p className="font-bold">Your Courses</p>
                 <p className="text-[10px] textColor6">
                   Courses are based on the current GES curriculum for all Basic
@@ -237,7 +237,7 @@ const HomePage = ({ isSidebarCollapsed }: HomeProps) => {
               </div>
             </div>
             <div className="col-span-4 pr-4 ">
-              <div className="w-full h-110 gradient6 shadow-2xl p-8 rounded-3xl">
+              <div className="w-full h-110 gradient6 shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] p-8 rounded-3xl">
                 <p className="font-[1000]">Academic Performance</p>
                 <div className="flex justify-center items-center mt-10 xl:mt-0" >
                   <div className="h-4/6 xl:h-80 xl:w-80 flex justify-center items-center">
@@ -259,7 +259,7 @@ const HomePage = ({ isSidebarCollapsed }: HomeProps) => {
                   </p>
                 </div>
               </div>
-              <div className="bg-[#F3FCF4] shadow-2xl min-h-40 mt-5 rounded-2xl px-5 py-2">
+              <div className="bg-[#F3FCF4] shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] min-h-40 mt-5 rounded-2xl px-5 py-2">
                 <div className="flex justify-between items-center">
                   <p className="font-bold">Linked Teachers</p>
                   <p className="text-[10px] text-[#9497FF] font-bold">
@@ -287,7 +287,7 @@ const HomePage = ({ isSidebarCollapsed }: HomeProps) => {
                   <ArrowDropdownIcon className="h-7" />
                 </div>
               </div>
-              <div className="bg-[#F3FCF4] shadow-2xl min-h-90 mt-5 rounded-2xl px-5 py-2 gradient8">
+              <div className="bg-[#F3FCF4] shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] min-h-90 mt-5 rounded-2xl px-5 py-2 gradient8">
                 <div className="flex justify-between items-center">
                   <p className="font-bold">Attendance</p>
                   <p className="text-[10px] text-[#9497FF] font-bold">

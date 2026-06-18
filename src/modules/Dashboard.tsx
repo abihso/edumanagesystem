@@ -23,7 +23,7 @@ import CloseIcon from "@iconify-react/material-symbols/close";
 import Images from "../assets/images";
 import HomePage from "../../pages/homePage";
 import CoursesPage from "../../pages/coursesPage";
-
+import AccountPage from "../../pages/accountPage";
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -51,6 +51,8 @@ const Dashboard = () => {
       return <HomePage isSidebarCollapsed={isSidebarCollapsed} />;
     } else if (p == "courses") {
       return <CoursesPage isSidebarCollapsed={isSidebarCollapsed} />;
+    } else if (p == "account") {
+      return <AccountPage isSidebarCollapsed={isSidebarCollapsed} />;
     } else {
       return <HomePage isSidebarCollapsed={isSidebarCollapsed} />;
     }
@@ -58,9 +60,7 @@ const Dashboard = () => {
 
   return (
     <>
-      
       <div className="hidden lg:block">
-        
         <div className="fixed top-0 right-0 left-0 z-50 bg-white flex justify-between items-center">
           <div className="flex items-center gap-1 w-fit pl-3">
             <div className=" flex justify-center items-center h-9 w-9 rounded-md bg-[#3884FF] ">
@@ -95,7 +95,7 @@ const Dashboard = () => {
                   <NotificationSolidIcon className="h-5 textColor6" />
                   <MessageIcon className="h-5 textColor6" />
                 </div>
-                <div className="flex items-center rounded-2xl shadow-2xl">
+                <div className="flex items-center rounded-2xl shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)]">
                   <img src={Images[2]} alt="" />
                   <div className="min-w-30">
                     <p className="text-[12px] font-[1000]">Pwatiu solomon</p>
@@ -108,7 +108,6 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="flex">
-          
           <div
             className={`fixed left-0 top-0 h-full bg-white shadow-lg transition-all duration-300 z-40 ${isSidebarCollapsed ? "w-16" : "w-64"}`}
           >
@@ -226,7 +225,10 @@ const Dashboard = () => {
                 )}
               </div>
               <div
-                className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center`}
+                className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center cursor-pointer`}
+                onClick={() => {
+                  setPage("account");
+                }}
               >
                 <ProfileFillIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
@@ -248,7 +250,7 @@ const Dashboard = () => {
                       Get deeper analytics, unlimited <br /> features and system
                       support upgrade
                     </p>
-                    <button className="w-42 py-3 rounded-4xl shadow-2xl font-bold text-[#3759E2]">
+                    <button className="w-42 py-3 rounded-4xl shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] font-bold text-[#3759E2]">
                       Upgrade plan
                     </button>
                   </div>
@@ -271,14 +273,11 @@ const Dashboard = () => {
             </div>
           </div>
 
-          
           {pageSelector(page)}
         </div>
       </div>
 
-      
       <div className="lg:hidden backgroundColor1 min-h-screen">
-        
         <div className="bg-white fixed top-0 left-0 right-0 z-20 px-4 py-3 flex justify-between items-center shadow-sm">
           <div className="flex items-center gap-2">
             <div className="h-8 w-8 bg-[#3884FF] rounded-md flex items-center justify-center">
@@ -293,7 +292,6 @@ const Dashboard = () => {
           </div>
         </div>
 
-        
         {isSidebarOpen && (
           <>
             <div
@@ -356,14 +354,12 @@ const Dashboard = () => {
           </>
         )}
 
-        
         <div className="px-4 py-3 pb-24 overflow-y-auto mt-15">
           {/* Breadcrumb */}
           <p className="text-[#B8B8B8] font-bold text-xs">
             Student Dashboard / <span className="text-black">Overview</span>
           </p>
 
-          
           <div className="gradient5 rounded-2xl p-4 mt-3 relative overflow-hidden">
             <div>
               <p className="font-bold text-xl">
@@ -378,7 +374,6 @@ const Dashboard = () => {
             </div>
           </div>
 
-          
           <div className="mt-4">
             <div className="flex items-center bg-white rounded-xl px-3 py-2 shadow-sm">
               <SearchIcon className="h-4 text-gray-400" />
@@ -390,7 +385,6 @@ const Dashboard = () => {
             </div>
           </div>
 
-          
           <div className="gradient6 rounded-2xl p-4 mt-4">
             <p className="font-bold">Academic Performance</p>
             <div className="flex justify-center my-3">
@@ -444,7 +438,6 @@ const Dashboard = () => {
             </div>
           </div>
 
-          
           <div className="bg-white rounded-2xl p-3 mt-4 shadow-sm">
             <p className="font-bold">Your Courses</p>
             <p className="text-[9px] textColor6">
@@ -502,7 +495,6 @@ const Dashboard = () => {
             ))}
           </div>
 
-          
           <div className="grid grid-cols-2 gap-3 mt-4">
             <div className="bg-[#F3FCF4] rounded-2xl p-3">
               <p className="font-bold text-sm">Linked Teachers</p>

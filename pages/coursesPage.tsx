@@ -55,16 +55,16 @@ const CoursesPage = ({isSidebarCollapsed} : HomeProps) => {
                             <div className="w-full" >
                               <p>General informationn</p>
                               <p className="text-[8px] textColor6 mt-1" >Mathematics</p> <br />
-                              <input type="text" disabled name="" id="" className=" shadow-2xl border rounded-2xl p-1 w-full" />
+                              <input type="text" disabled name="" id="" className=" shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] border rounded-2xl p-1 w-full" />
                             </div>
                             <div className="w-full" >
                               <p>Courses Code</p>
                               <p className="text-[8px] textColor6 mt-1" >Mathematics</p> <br />
-                              <input type="text" name="" value={code} disabled id="" className=" shadow-2xl border rounded-2xl p-1 w-full" />
+                              <input type="text" name="" value={code} disabled id="" className=" shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] border rounded-2xl p-1 w-full" />
                             </div>
                           </div>
                           <p className="mt-4" >Course Title</p>
-                          <input type="text" name="" disabled id="" className=" shadow-2xl border rounded-2xl p-5 w-full" />
+                          <input type="text" name="" disabled id="" className=" shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] border rounded-2xl p-5 w-full" />
                           <div className="flex justify-between items-center mt-5 " >
                             <p className="text-[7px] textColor6" >MATH303 | Sir AbihSolo</p>
                             <p className="text-[7px] text-[#3884FF]" >See Course Details</p>

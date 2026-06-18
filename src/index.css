@@ -70,6 +70,10 @@
 
     background: linear-gradient(240deg, #D2FFFE 0%, #FCFFF5 44%, #FFFFFF 64%, #EFE3FF 100%  );
 }
+.gradient0 {
+
+    background: linear-gradient(-240deg, #E6D0EE 0%, #F9F2EE 34%, #E4FDEB 68%, #B5FAED 100%  );
+}
 
 @theme inline {
   --font-heading: var(--font-sans);
