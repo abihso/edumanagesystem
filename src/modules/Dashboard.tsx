@@ -24,6 +24,7 @@ import Images from "../assets/images";
 import HomePage from "../../pages/homePage";
 import CoursesPage from "../../pages/coursesPage";
 import AccountPage from "../../pages/accountPage";
+import Performance from "../../pages/performancePage";
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -53,6 +54,8 @@ const Dashboard = () => {
       return <CoursesPage isSidebarCollapsed={isSidebarCollapsed} />;
     } else if (p == "account") {
       return <AccountPage isSidebarCollapsed={isSidebarCollapsed} />;
+    } else if (p == "performance") {
+      return <Performance isSidebarCollapsed={isSidebarCollapsed} />;
     } else {
       return <HomePage isSidebarCollapsed={isSidebarCollapsed} />;
     }
@@ -163,7 +166,10 @@ const Dashboard = () => {
                 )}
               </div>
               <div
-                className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center`}
+                onClick={() => {
+                  setPage("performance");
+                }}
+                className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center cursor-pointer`}
               >
                 <PerformanceIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
