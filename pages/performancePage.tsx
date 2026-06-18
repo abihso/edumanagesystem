@@ -1,7 +1,5 @@
-import ArrowDropdownIcon from "@iconify-react/nrk/arrow-dropdown";
-import Images from "../src/assets/images";
 import type { HomeProps } from "../src/assets/types";
-import { ChartTooltip, type ChartConfig } from "../@/components/ui/chart";
+import { ChartTooltip } from "../@/components/ui/chart";
 import { ChartContainer, ChartTooltipContent } from "../@/components/ui/chart";
 import {
   Bar,
@@ -195,7 +193,7 @@ const Performance = ({ isSidebarCollapsed }: HomeProps) => {
                       outerRadius="80%"
                       label
                     >
-                      {skillsData.map((entry, index) => (
+                      {skillsData.map((_entry, index) => (
                         <Cell
                           key={`cell-${index}`}
                           fill={SKILL_COLORS[index % SKILL_COLORS.length]}
