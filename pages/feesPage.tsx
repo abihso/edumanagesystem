@@ -2,8 +2,12 @@ import type { HomeProps } from "../src/assets/types";
 import TimeLineIcon from "@iconify-react/mingcute/time-line";
 import CashBagGiveIcon from "@iconify-react/streamline-cyber/cash-bag-give";
 import DotsThreeCircleDuotoneIcon from "@iconify-react/ph/dots-three-circle-duotone";
+import CloseIcon from "@iconify-react/material-symbols/close";
+import { useState } from "react";
 
 const FeesPage = ({ isSidebarCollapsed }: HomeProps) => {
+     const [showDialogBox,setShowDialogBox] = useState(false)
+  
   return (
     <div
       className={`flex-1 transition-all duration-300 ${isSidebarCollapsed ? "ml-16" : "ml-64"} pt-15`}
@@ -47,7 +51,10 @@ const FeesPage = ({ isSidebarCollapsed }: HomeProps) => {
                 </p>
               </div>
               <div className=" col-span-3 h-30  p-3 grid justify-end items-start ">
-                <button className="text-[10px] border w-30 p-0.5 rounded-md font-black">
+                <button
+                  onClick={() => setShowDialogBox(true)}
+                  className="text-[10px] border w-30 p-0.5 rounded-md font-black"
+                >
                   Make Payment
                 </button>
                 <button className="text-[10px] -mt-8 border w-30 p-0.5 rounded-md font-black">
@@ -371,6 +378,116 @@ const FeesPage = ({ isSidebarCollapsed }: HomeProps) => {
           </div>
         </div>
       </div>
+      {showDialogBox && (
+        <div className="fixed z-40 top-0 right-0 left-0 bottom-0 bg-[#000000b4] flex justify-center items-center ">
+          <div className="h-100 w-100 gradient9 rounded-2xl py-3 px-5 gap-4">
+            <CloseIcon
+              className="h-7 p-2 float-right -mt-2 "
+              onClick={() => setShowDialogBox(false)}
+            />
+            <p className="font-bold  text-xs">Assignment Details</p>
+            <p className="text-[8px]">
+              Enter your Student you used in creating your account
+            </p>
+            <form className="mt-3">
+              <label htmlFor="name" className="text-[10px] font-bold">
+                Student Name
+              </label>{" "}
+              <br />
+              <input
+                type="text"
+                name=""
+                id=""
+                className="border w-full rounded-sm text-[10px] p-2"
+                placeholder="Antwi-Boasiako Theophilus"
+              />
+              <div className="flex justify-between gap-2 mt-2 items-center">
+                <div
+                  className="w-full
+                "
+                >
+                  <label htmlFor="name" className="text-[10px] font-bold">
+                    Payment Type
+                  </label>{" "}
+                  <br />
+                  <select
+                    name=""
+                    id=""
+                    className="border w-full rounded-sm text-[10px] p-2"
+                  >
+                    <option value=""></option>
+                    <option value="">School Fee</option>
+                    <option value="">Feeding Fee</option>
+                    <option value="">Books Fee</option>
+                    <option value="">Sports Fee</option>
+                    <option value="">Examination Fee</option>
+                  </select>
+                </div>
+                <div
+                  className="w-full
+                "
+                >
+                  <label htmlFor="name" className="text-[10px] font-bold">
+                    Date Of Birth
+                  </label>{" "}
+                  <br />
+                  <input
+                    type="date"
+                    name=""
+                    id=""
+                    className="border w-full rounded-sm text-[10px] p-2"
+                    placeholder="20/01/2025"
+                  />
+                </div>
+              </div>
+              <div className="flex justify-between gap-2 mt-2 items-center">
+                <div
+                  className="w-full
+                "
+                >
+                  <label htmlFor="name" className="text-[10px] font-bold">
+                    Student ID
+                  </label>{" "}
+                  <br />
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    className="border w-full rounded-sm text-[10px] p-2"
+                    placeholder="20/01/2025"
+                  />
+                </div>
+                <div
+                  className="w-full
+                "
+                >
+                  <label htmlFor="name" className="text-[10px] font-bold">
+                    Class
+                  </label>{" "}
+                  <br />
+                  <select
+                    name=""
+                    id=""
+                    className="border w-full rounded-sm text-[10px] p-2"
+                  >
+                    <option value=""></option>
+                    <option value="">Junior High School 3C</option>
+                    <option value="">Junior High School 3B</option>
+                    <option value="">Junior High School 3A</option>
+                    <option value="">Junior High School 2C</option>
+                    <option value="">Junior High School 2B</option>
+                  </select>
+                </div>
+              </div>
+              <div className="flex justify-center mt-5">
+                <button className="flex border py-1 px-3 rounded-md text-white bg-[#01032D] text-xs ">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
