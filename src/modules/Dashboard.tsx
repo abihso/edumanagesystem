@@ -28,6 +28,7 @@ import Performance from "../../pages/performancePage";
 import AssignmentPage from "../../pages/assignmentPage";
 import Transportation from "../../pages/transportationPage";
 import AiLearningPath from "../../pages/aiLearningPathPage";
+import FeesPage from "../../pages/feesPage";
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -62,6 +63,9 @@ const Dashboard = () => {
     }
      else if (p == "assignment") {
       return <AssignmentPage isSidebarCollapsed={isSidebarCollapsed} />;
+    }
+     else if (p == "fees") {
+      return <FeesPage isSidebarCollapsed={isSidebarCollapsed} />;
     }
      else if (p == "transportation") {
       return <Transportation isSidebarCollapsed={isSidebarCollapsed} />;
@@ -212,17 +216,21 @@ const Dashboard = () => {
                   </p>
                 )}
               </div>
-              
               <div
-                className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center`}
+                onClick={() => {
+                  setPage("fees");
+                }}
+                className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center cursor-pointer`}
               >
                 <MoneyPaymentsCurrencyEuroDollarExchangeIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
                   <p className="font-bold textColor6 text-xs">
+                    {" "}
                     Fees and Payments
                   </p>
                 )}
               </div>
+
               <div
                 onClick={() => {
                   setPage("transportation");
