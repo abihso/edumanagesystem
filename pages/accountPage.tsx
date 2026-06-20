@@ -26,7 +26,7 @@ const AccountPage = ({ isSidebarCollapsed }: HomeProps) => {
       <div className="backgroundColor1 min-h-screen">
         <div className="pl-3 pt-5 pr-3">
           <p className="text-[#B8B8B8] font-bold text-sm">
-            Student Dashboard /{" "}
+            Student Dashboard  / {" "}
             <span className="text-black text-xs">Account and Settings</span>
           </p>
           <div className="flex justify-between mt-7 gap-7">
@@ -55,7 +55,7 @@ const AccountPage = ({ isSidebarCollapsed }: HomeProps) => {
               >
                 Notification
               </p>
-              
+
               <p className="textColor6 text-xs font-bold py-4 pl-3 w-[80%] rounded-2xl">
                 Group and Members
               </p>

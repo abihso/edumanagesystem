@@ -70,13 +70,13 @@ import ResultsIcon from '@iconify-react/foundation/results';
 
 
 
-
+import StarFourPointsIcon from '@iconify-react/mdi/star-four-points';
 import BusIcon from '@iconify-react/tabler/bus';
 import ProfileFillIcon from '@iconify-react/iconamoon/profile-fill';
 import PhoneBrokenIcon from '@iconify-react/solar/phone-broken';
 import LocationIcon from '@iconify-react/boxicons/location';
 import TimeLineIcon from '@iconify-react/mingcute/time-line';
-
+import BusIcon from '@iconify-react/lucide/bus';
 
 ---
 title: Chart

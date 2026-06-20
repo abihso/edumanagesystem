@@ -9,7 +9,7 @@ const HomePage = ({ isSidebarCollapsed }: HomeProps) => {
       <div className="backgroundColor1 min-h-screen">
         <div className="pl-3 pt-5 pr-3">
           <p className="text-[#B8B8B8] font-bold text-sm">
-            Student Dashboard /{" "}
+            Student Dashboard  / {" "}
             <span className="text-black text-xs">Overview</span>
           </p>
           <div className="grid grid-cols-12 mt-3 gap-4">
@@ -239,7 +239,7 @@ const HomePage = ({ isSidebarCollapsed }: HomeProps) => {
             <div className="col-span-4 pr-4 ">
               <div className="w-full h-110 gradient6 shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] p-8 rounded-3xl">
                 <p className="font-[1000]">Academic Performance</p>
-                <div className="flex justify-center items-center mt-10 xl:mt-0" >
+                <div className="flex justify-center items-center mt-10 xl:mt-0">
                   <div className="h-4/6 xl:h-80 xl:w-80 flex justify-center items-center">
                     <div className="flex justify-center items-center w-40 h-40 xl:w-[90%] xl:h-[90%] rounded-full gradient7">
                       <div className="flex justify-center items-center w-33 h-33 xl:w-[80%] xl:h-[80%] bg-[#EFEFEF] rounded-full">

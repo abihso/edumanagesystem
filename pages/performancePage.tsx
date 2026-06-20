@@ -51,8 +51,8 @@ const Performance = ({ isSidebarCollapsed }: HomeProps) => {
       <div className="backgroundColor1 min-h-screen">
         <div className="pl-3 pt-5 pr-3">
           <p className="text-[#B8B8B8] font-bold text-sm">
-            Student Dashboard /{" "}
-            <span className="text-black text-xs">Perfoemance</span>
+            Student Dashboard  / {" "}
+            <span className="text-black text-xs">Performance</span>
           </p>
           <div className="grid grid-cols-12 mt-3 gap-4">
             <div className="col-span-9">
@@ -301,5 +301,4 @@ const Performance = ({ isSidebarCollapsed }: HomeProps) => {
 };
 
 export default Performance;
-
-///
+ 

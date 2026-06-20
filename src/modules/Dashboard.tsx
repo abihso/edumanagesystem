@@ -25,6 +25,10 @@ import HomePage from "../../pages/homePage";
 import CoursesPage from "../../pages/coursesPage";
 import AccountPage from "../../pages/accountPage";
 import Performance from "../../pages/performancePage";
+import AssignmentPage from "../../pages/assignmentPage";
+import Transportation from "../../pages/transportationPage";
+import AiLearningPath from "../../pages/aiLearningPathPage";
+
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -52,9 +56,20 @@ const Dashboard = () => {
       return <HomePage isSidebarCollapsed={isSidebarCollapsed} />;
     } else if (p == "courses") {
       return <CoursesPage isSidebarCollapsed={isSidebarCollapsed} />;
-    } else if (p == "account") {
+    }
+     else if (p == "account") {
       return <AccountPage isSidebarCollapsed={isSidebarCollapsed} />;
-    } else if (p == "performance") {
+    }
+     else if (p == "assignment") {
+      return <AssignmentPage isSidebarCollapsed={isSidebarCollapsed} />;
+    }
+     else if (p == "transportation") {
+      return <Transportation isSidebarCollapsed={isSidebarCollapsed} />;
+    }
+     else if (p == "ai") {
+      return <AiLearningPath isSidebarCollapsed={isSidebarCollapsed} />;
+    }
+     else if (p == "performance") {
       return <Performance isSidebarCollapsed={isSidebarCollapsed} />;
     } else {
       return <HomePage isSidebarCollapsed={isSidebarCollapsed} />;
@@ -131,6 +146,9 @@ const Dashboard = () => {
 
             <div className="pl-3 overflow-y-auto h-[calc(100vh-60px)] pb-20">
               <div
+                onClick={() => {
+                  setPage("");
+                }}
                 className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} bg-[#3884FF] py-1 rounded-md mt-6 flex gap-3 items-center`}
               >
                 <DashboardIcon className="h-5 text-white" />
@@ -150,13 +168,17 @@ const Dashboard = () => {
                 )}
               </div>
               <div
-                className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center`}
+                onClick={() => {
+                  setPage("assignment");
+                }}
+                className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center cursor-pointer`}
               >
                 <CartIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
                   <p className="font-bold textColor6 text-xs">Assignments</p>
                 )}
               </div>
+
               <div
                 className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center`}
               >
@@ -177,15 +199,20 @@ const Dashboard = () => {
                 )}
               </div>
               <div
-                className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center`}
+                onClick={() => {
+                  setPage("ai");
+                }}
+                className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center cursor-pointer`}
               >
                 <GraphNewOutlineIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
                   <p className="font-bold textColor6 text-xs">
+                    {" "}
                     AI Learning Path
                   </p>
                 )}
               </div>
+              
               <div
                 className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center`}
               >
@@ -197,13 +224,17 @@ const Dashboard = () => {
                 )}
               </div>
               <div
-                className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center`}
+                onClick={() => {
+                  setPage("transportation");
+                }}
+                className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center cursor-pointer`}
               >
                 <TransportIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
                   <p className="font-bold textColor6 text-xs">Transportation</p>
                 )}
               </div>
+
               <div
                 className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center`}
               >
