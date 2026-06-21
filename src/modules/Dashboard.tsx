@@ -29,6 +29,8 @@ import AssignmentPage from "../../pages/assignmentPage";
 import Transportation from "../../pages/transportationPage";
 import AiLearningPath from "../../pages/aiLearningPathPage";
 import FeesPage from "../../pages/feesPage";
+import SchedulePage from "../../pages/schedulePage";
+import ResultsPage from "../../pages/resultsPage";
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -61,6 +63,9 @@ const Dashboard = () => {
      else if (p == "account") {
       return <AccountPage isSidebarCollapsed={isSidebarCollapsed} />;
     }
+     else if (p == "schedule") {
+      return <SchedulePage isSidebarCollapsed={isSidebarCollapsed} />;
+    }
      else if (p == "assignment") {
       return <AssignmentPage isSidebarCollapsed={isSidebarCollapsed} />;
     }
@@ -72,6 +77,9 @@ const Dashboard = () => {
     }
      else if (p == "ai") {
       return <AiLearningPath isSidebarCollapsed={isSidebarCollapsed} />;
+    }
+     else if (p == "results") {
+      return <ResultsPage isSidebarCollapsed={isSidebarCollapsed} />;
     }
      else if (p == "performance") {
       return <Performance isSidebarCollapsed={isSidebarCollapsed} />;
@@ -182,15 +190,18 @@ const Dashboard = () => {
                   <p className="font-bold textColor6 text-xs">Assignments</p>
                 )}
               </div>
-
               <div
-                className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center`}
+                onClick={() => {
+                  setPage("schedule");
+                }}
+                className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center cursor-pointer`}
               >
                 <ScheduleIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
                   <p className="font-bold textColor6 text-xs">Schedule</p>
                 )}
               </div>
+
               <div
                 onClick={() => {
                   setPage("performance");
@@ -261,8 +272,12 @@ const Dashboard = () => {
                   </p>
                 )}
               </div>
+            
               <div
-                className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center`}
+                className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center cursor-pointer`}
+                onClick={() => {
+                  setPage("results");
+                }}
               >
                 <ContentFilesNewspaperIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
