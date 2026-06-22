@@ -3,8 +3,40 @@ import StarFourPointsIcon from "@iconify-react/mdi/star-four-points";
 import GraphBoxOutlineIcon from "@iconify-react/mdi/graph-box-outline";
 import TimeLineIcon from "@iconify-react/mingcute/time-line";
 import GraphNewOutlineIcon from "@iconify-react/solar/graph-new-outline";
+import StatsComponent from "../src/components/stats-component";
+import ProgressComponent from "../src/components/progress-component";
 
 const AiLearningPath = ({ isSidebarCollapsed }: HomeProps) => {
+   const stats = [
+     {
+       icon: <GraphBoxOutlineIcon className="h-7 text-[#FF928A]" />,
+       title: "AI Prediction",
+       data: <>3</>,
+       description1: " Compared To Last Semester",
+       description2: "",
+     },
+     {
+       icon: <GraphNewOutlineIcon className="h-7 text-[#FF928A]" />,
+       title: "Predicted GPA",
+       data: <>3.7</>,
+       description1: " Next semester",
+       description2: "",
+     },
+     {
+       icon: <TimeLineIcon className="h-7 text-[#FF928A]" />,
+       title: "Success Rate",
+       data: <>Top 92%</>,
+       description1: "  AI confidence",
+       description2: "",
+     },
+     {
+       icon: <GraphBoxOutlineIcon className="h-7 text-[#FF928A]" />,
+       title: "Possible Carrer Path",
+       data: <>Enginneering</>,
+       description1: "Academic Strenght",
+       description2: "",
+     },
+   ];
   return (
     <div
       className={`flex-1 transition-all duration-300 ${isSidebarCollapsed ? "ml-16" : "ml-64"} pt-15`}
@@ -17,51 +49,17 @@ const AiLearningPath = ({ isSidebarCollapsed }: HomeProps) => {
           </p>
           <div className="col-span-9">
             <div className=" rounded-3xl grid grid-cols-12 gap-3 py-4">
-              <div className=" col-span-3 h-30 gradient5 p-3 rounded-2xl shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] ">
-                <span className="flex gap-1 items-center">
-                  <GraphBoxOutlineIcon className="h-7 text-[#FF928A]" />
-                  <p className="textColor6 font-bold text-sm">AI Prediction</p>
-                </span>
-                <p className="mt-3 textColor6 font-bold text-xs">3</p>
-                <p className="text-[10px] textColor6 font-bold mt-4 ">
-                  Compared To Last Semester
-                </p>
-              </div>
-              <div className=" col-span-3 h-30 gradient5 p-3 rounded-2xl shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] ">
-                <span className="flex gap-1 items-center">
-                  <GraphNewOutlineIcon className="h-7 text-[#FF928A]" />
-                  <p className="textColor6 font-bold text-sm">Predicted GPA</p>
-                </span>
-                <p className="mt-3 textColor6 font-bold text-xs">3.7</p>
-                <p className="text-[10px] textColor6 font-bold mt-4 ">
-                  Next semester
-                </p>
-              </div>
-              <div className=" col-span-3 h-30 gradient5 p-3 rounded-2xl shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] ">
-                <span className="flex gap-1 items-center">
-                  <TimeLineIcon className="h-7 text-[#FF928A]" />
-                  <p className="textColor6 font-bold text-sm">Success Rate</p>
-                </span>
-                <p className="mt-3 textColor6 font-bold text-xs">Top 92%</p>
-                <p className="text-[10px] textColor6 font-bold mt-4 ">
-                  AI confidence
-                </p>
-              </div>
-              <div className=" col-span-3 h-30 gradient5 p-3 rounded-2xl shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] ">
-                <span className="flex gap-1 items-center">
-                  <GraphBoxOutlineIcon className="h-7 text-[#FF928A]" />
-                  <p className="textColor6 font-bold text-sm">
-                    {" "}
-                    Possible Carrer Path
-                  </p>
-                </span>
-                <p className="mt-3 textColor6 font-bold text-xs">
-                  Enginneering
-                </p>
-                <p className="text-[10px] textColor6 font-bold mt-4 ">
-                  Academic Strenght
-                </p>
-              </div>
+              {stats.map((item, index) => (
+                <StatsComponent
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  data={item.data}
+                  description1={item.description1}
+                  description2={item.description2}
+                  className={` col-span-3 h-35 gradient5 p-3 rounded-2xl shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] `}
+                />
+              ))}
             </div>
             <div className="py-2 px-10 shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] rounded-2xl">
               <div className="flex justify-between items-center">
@@ -88,7 +86,8 @@ const AiLearningPath = ({ isSidebarCollapsed }: HomeProps) => {
                   down. Consider scheduling study session for more religious
                   concepts
                 </p>
-                <progress
+
+                <ProgressComponent
                   value={30}
                   max={100}
                   className="w-full rounded-3xl h-2 mt-4
@@ -110,8 +109,9 @@ const AiLearningPath = ({ isSidebarCollapsed }: HomeProps) => {
                   Based on your strong performance in Mathematics, science and
                   Computing, consider exploring Software Engineering roles.
                 </p>
-                <progress
-                  value={90}
+
+                <ProgressComponent
+                  value={67}
                   max={100}
                   className="w-full rounded-3xl h-2 mt-4
                           [&::-webkit-progress-bar]:bg-gray-200 
@@ -132,8 +132,9 @@ const AiLearningPath = ({ isSidebarCollapsed }: HomeProps) => {
                   AI suggests additional video tutorials for Database
                   Normalization concepts.
                 </p>
-                <progress
-                  value={84}
+
+                <ProgressComponent
+                  value={2}
                   max={100}
                   className="w-full rounded-3xl h-2 mt-4
                           [&::-webkit-progress-bar]:bg-gray-200 

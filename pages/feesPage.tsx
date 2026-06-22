@@ -8,7 +8,32 @@ import { useState } from "react";
 import { Checkbox } from "../@/components/ui/checkbox";
 import IdCardRoundedIcon from "@iconify-react/material-symbols/id-card-rounded";
 import VisaLineIcon from "@iconify-react/ri/visa-line";
+import StatsComponent from "../src/components/stats-component";
+
 const FeesPage = ({ isSidebarCollapsed }: HomeProps) => {
+    const stats = [
+      {
+        icon: <CashBagGiveIcon className="h-7 text-[#FF928A]" />,
+        title: "TotalPaid",
+        data: <>$14,500</>,
+        description1: " This semester",
+        description2: "",
+      },
+      {
+        icon: <DotsThreeCircleDuotoneIcon className="h-7 text-[#FF928A]" />,
+        title: "Pending",
+        data: <>$300</>,
+        description1: " Due Nov 15",
+        description2: "!+0.2 from last semester",
+      },
+      {
+        icon: <TimeLineIcon className="h-7 text-[#FF928A]" />,
+        title: "Total Due",
+        data: <>$14,800</>,
+        description1: "This semester",
+        description2: "",
+      },
+    ];
   const [showDialogBox, setShowDialogBox] = useState(false);
   const [showPage, setShowPage] = useState("main");
   const [showComfirmDialogBox, setShowComfirmDialogBox] = useState(false);
@@ -34,36 +59,17 @@ const FeesPage = ({ isSidebarCollapsed }: HomeProps) => {
               </p>
               <div className="col-span-9">
                 <div className=" rounded-3xl grid grid-cols-12 gap-3 py-4">
-                  <div className=" col-span-3 h-30 gradient5 p-3 rounded-2xl shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] ">
-                    <span className="flex gap-1 items-center">
-                      <CashBagGiveIcon className="h-7 text-[#FF928A]" />
-                      <p className="textColor6 font-bold text-sm">Total Paid</p>
-                    </span>
-                    <p className="mt-3 textColor6 font-bold text-xs">$14,500</p>
-                    <p className="text-[10px] textColor6 font-bold mt-4 ">
-                      This semester
-                    </p>
-                  </div>
-                  <div className=" col-span-3 h-30 gradient5 p-3 rounded-2xl shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] ">
-                    <span className="flex gap-1 items-center">
-                      <DotsThreeCircleDuotoneIcon className="h-7 text-[#FF928A]" />
-                      <p className="textColor6 font-bold text-sm">Pending</p>
-                    </span>
-                    <p className="mt-3 textColor6 font-bold text-xs">$300</p>
-                    <p className="text-[10px] textColor6 font-bold mt-4 ">
-                      Due Nov 15
-                    </p>
-                  </div>
-                  <div className=" col-span-3 h-30 gradient5 p-3 rounded-2xl shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] ">
-                    <span className="flex gap-1 items-center">
-                      <TimeLineIcon className="h-7 text-[#FF928A]" />
-                      <p className="textColor6 font-bold text-sm">Total Due</p>
-                    </span>
-                    <p className="mt-3 textColor6 font-bold text-xs">$14,800</p>
-                    <p className="text-[10px] textColor6 font-bold mt-4 ">
-                      This semester
-                    </p>
-                  </div>
+                  {stats.map((item, index) => (
+                    <StatsComponent
+                      key={index}
+                      icon={item.icon}
+                      title={item.title}
+                      data={item.data}
+                      description1={item.description1}
+                      description2={item.description2}
+                      className={` col-span-3 h-35 gradient5 p-3 rounded-2xl shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] `}
+                    />
+                  ))}
                   <div className=" col-span-3 h-30  p-3 grid justify-end items-start ">
                     <button
                       onClick={() => setShowDialogBox(true)}

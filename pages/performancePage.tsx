@@ -17,8 +17,43 @@ import {
 import GraphBoxOutlineIcon from "@iconify-react/mdi/graph-box-outline";
 import TimeLineIcon from "@iconify-react/mingcute/time-line";
 import GraphNewOutlineIcon from "@iconify-react/solar/graph-new-outline";
-
+import StatsComponent from "../src/components/stats-component";
 const Performance = ({ isSidebarCollapsed }: HomeProps) => {
+  const stats = [
+    {
+      icon: <GraphBoxOutlineIcon className="h-7 text-[#FF928A]" />,
+      title: "Current GPA",
+      data: (
+        <>
+          <span className="font-[1000] text-black text-xl ">3.7</span> / 4.0
+        </>
+      ),
+      description1: " Compared To Last Semester",
+      description2: "!+0.2 from last semester",
+    },
+    {
+      icon: <TimeLineIcon className="h-7 text-[#FF928A]" />,
+      title: "Credit Earned",
+      data: (
+        <>
+          <span className="font-[1000] text-black text-xl ">120</span> / 144
+        </>
+      ),
+      description1: " Compared To Last Semester",
+      description2: "!+0.2 from last semester",
+    },
+    {
+      icon: <GraphNewOutlineIcon className="h-7 text-[#FF928A]" />,
+      title: "Credit Earned",
+      data: (
+        <>
+          <span className="font-[1000] text-black text-xl ">12</span> / 44
+        </>
+      ),
+      description1: " Compared To Last Semester",
+      description2: "!+0.2 from last semester",
+    },
+  ];
   const chartData = [
     { month: "January", desktop: 186, mobile: 80 },
     { month: "February", desktop: 305, mobile: 200 },
@@ -57,62 +92,19 @@ const Performance = ({ isSidebarCollapsed }: HomeProps) => {
           <div className="grid grid-cols-12 mt-3 gap-4">
             <div className="col-span-9">
               <div className=" rounded-3xl grid grid-cols-12 gap-3 py-4 px-5 ">
-                <div className=" col-span-4 h-35 gradient5 p-3 rounded-2xl shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] ">
-                  <span className="flex gap-1 items-center">
-                    <GraphBoxOutlineIcon className="h-7 text-[#FF928A]" />
-                    <p className="textColor6 font-bold text-sm">Current GPA</p>
-                  </span>
-                  <p className="mt-3 textColor6 font-bold text-xs">
-                    <span className="font-[1000] text-black text-xl ">3.7</span>{" "}
-                    / 4.0
-                  </p>
-                  <div className="flex justify-between mt-4">
-                    <p className="text-[10px] textColor6 font-bold ">
-                      Compared To Last Semester
-                    </p>
-                    <p className="text-[8px] text-green-500">
-                      !+0.2 from last semester
-                    </p>
-                  </div>
-                </div>
-                <div className=" col-span-4 h-35 gradient5 p-3 rounded-2xl shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] ">
-                  <span className="flex gap-1 items-center">
-                    <TimeLineIcon className="h-7 text-[#FF928A]" />
-                    <p className="textColor6 font-bold text-sm">
-                      Credit Earned
-                    </p>
-                  </span>
-                  <p className="mt-3 textColor6 font-bold text-xs">
-                    <span className="font-[1000] text-black text-xl ">120</span>{" "}
-                    / 144
-                  </p>
-                  <div className="flex justify-between mt-4">
-                    <p className="text-[10px] textColor6 font-bold ">
-                      Compared To Last Semester
-                    </p>
-                    <p className="text-[8px] text-green-500">
-                      !+0.2 from last semester
-                    </p>
-                  </div>
-                </div>
-                <div className=" col-span-4 h-35 gradient5 p-3 rounded-2xl shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] ">
-                  <span className="flex gap-1 items-center">
-                    <GraphNewOutlineIcon className="h-7 text-[#FF928A]" />
-                    <p className="textColor6 font-bold text-sm">Class Rank</p>
-                  </span>
-                  <p className="mt-3 textColor6 font-bold text-xs">
-                    <span className="font-[1000] text-black text-xl ">12</span>{" "}
-                    / 44
-                  </p>
-                  <div className="flex justify-between mt-4">
-                    <p className="text-[10px] textColor6 font-bold ">
-                      Compared To Last Semester
-                    </p>
-                    <p className="text-[8px] text-green-500">
-                      !+0.2 from last semester
-                    </p>
-                  </div>
-                </div>
+                {stats.map((item, index) => (
+                  <StatsComponent
+                    key={index}
+                    icon={item.icon}
+                    title={item.title}
+                    data={item.data}
+                    description1={item.description1}
+                    description2={item.description2}
+                    className={
+                      ` col-span-4 h-35 gradient5 p-3 rounded-2xl shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] `
+                    }
+                  />
+                ))}
               </div>
               {/* Bar Graph */}
               <div className="px-4 py-3 min-h-90 mt-5 mb-10 rounded-2xl shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)]">

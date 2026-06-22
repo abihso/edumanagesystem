@@ -59,34 +59,28 @@ const Dashboard = () => {
       return <HomePage isSidebarCollapsed={isSidebarCollapsed} />;
     } else if (p == "courses") {
       return <CoursesPage isSidebarCollapsed={isSidebarCollapsed} />;
-    }
-     else if (p == "account") {
+    } else if (p == "account") {
       return <AccountPage isSidebarCollapsed={isSidebarCollapsed} />;
-    }
-     else if (p == "schedule") {
+    } else if (p == "schedule") {
       return <SchedulePage isSidebarCollapsed={isSidebarCollapsed} />;
-    }
-     else if (p == "assignment") {
+    } else if (p == "assignment") {
       return <AssignmentPage isSidebarCollapsed={isSidebarCollapsed} />;
-    }
-     else if (p == "fees") {
+    } else if (p == "fees") {
       return <FeesPage isSidebarCollapsed={isSidebarCollapsed} />;
-    }
-     else if (p == "transportation") {
+    } else if (p == "transportation") {
       return <Transportation isSidebarCollapsed={isSidebarCollapsed} />;
-    }
-     else if (p == "ai") {
+    } else if (p == "ai") {
       return <AiLearningPath isSidebarCollapsed={isSidebarCollapsed} />;
-    }
-     else if (p == "results") {
+    } else if (p == "results") {
       return <ResultsPage isSidebarCollapsed={isSidebarCollapsed} />;
-    }
-     else if (p == "performance") {
+    } else if (p == "performance") {
       return <Performance isSidebarCollapsed={isSidebarCollapsed} />;
     } else {
       return <HomePage isSidebarCollapsed={isSidebarCollapsed} />;
     }
   };
+
+  const [selectedPage, setSelectedPage] = useState("");
 
   return (
     <>
@@ -160,6 +154,7 @@ const Dashboard = () => {
               <div
                 onClick={() => {
                   setPage("");
+                  setSelectedPage("");
                 }}
                 className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} bg-[#3884FF] py-1 rounded-md mt-6 flex gap-3 items-center`}
               >
@@ -171,57 +166,80 @@ const Dashboard = () => {
               <div
                 onClick={() => {
                   setPage("courses");
+                  setSelectedPage("courses");
                 }}
                 className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center cursor-pointer`}
               >
                 <ContentFilesNewspaperIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
-                  <p className="font-bold textColor6 text-xs">My Courses</p>
+                  <p
+                    className={`font-bold ${selectedPage == "courses" ? "text-[#3884ff]" : "textColor6"} hover:text-[#3884ff]!  text-xs `}
+                  >
+                    My Courses
+                  </p>
                 )}
               </div>
               <div
                 onClick={() => {
                   setPage("assignment");
+                  setSelectedPage("assignment");
                 }}
                 className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center cursor-pointer`}
               >
                 <CartIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
-                  <p className="font-bold textColor6 text-xs">Assignments</p>
+                  <p
+                    className={`font-bold ${selectedPage == "assignment" ? "text-[#3884ff]" : "textColor6"} hover:text-[#3884ff]!  text-xs `}
+                  >
+                    Assignments
+                  </p>
                 )}
               </div>
               <div
                 onClick={() => {
                   setPage("schedule");
+                  setSelectedPage("schedule");
                 }}
                 className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center cursor-pointer`}
               >
                 <ScheduleIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
-                  <p className="font-bold textColor6 text-xs">Schedule</p>
+                  <p
+                    className={`font-bold ${selectedPage == "schedule" ? "text-[#3884ff]" : "textColor6"} hover:text-[#3884ff]! text-xs `}
+                  >
+                    Schedule
+                  </p>
                 )}
               </div>
 
               <div
                 onClick={() => {
                   setPage("performance");
+                  setSelectedPage("performance");
                 }}
                 className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center cursor-pointer`}
               >
                 <PerformanceIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
-                  <p className="font-bold textColor6 text-xs">Performance</p>
+                  <p
+                    className={`font-bold ${selectedPage == "performance" ? "text-[#3884ff]" : "textColor6"} hover:text-[#3884ff]! text-xs `}
+                  >
+                    Performance
+                  </p>
                 )}
               </div>
               <div
                 onClick={() => {
                   setPage("ai");
+                  setSelectedPage("ai");
                 }}
                 className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center cursor-pointer`}
               >
                 <GraphNewOutlineIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
-                  <p className="font-bold textColor6 text-xs">
+                  <p
+                    className={`font-bold ${selectedPage == "ai" ? "text-[#3884ff]" : "textColor6"} hover:text-[#3884ff]! text-xs `}
+                  >
                     {" "}
                     AI Learning Path
                   </p>
@@ -230,12 +248,15 @@ const Dashboard = () => {
               <div
                 onClick={() => {
                   setPage("fees");
+                  setSelectedPage("fees");
                 }}
                 className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center cursor-pointer`}
               >
                 <MoneyPaymentsCurrencyEuroDollarExchangeIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
-                  <p className="font-bold textColor6 text-xs">
+                  <p
+                    className={`font-bold ${selectedPage == "fees" ? "text-[#3884ff]" : "textColor6"} hover:text-[#3884ff]! text-xs `}
+                  >
                     {" "}
                     Fees and Payments
                   </p>
@@ -245,12 +266,17 @@ const Dashboard = () => {
               <div
                 onClick={() => {
                   setPage("transportation");
+                  setSelectedPage("transportation");
                 }}
                 className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center cursor-pointer`}
               >
                 <TransportIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
-                  <p className="font-bold textColor6 text-xs">Transportation</p>
+                  <p
+                    className={`font-bold ${selectedPage == "transportation" ? "text-[#3884ff]" : "textColor6"} hover:text-[#3884ff]! text-xs `}
+                  >
+                    Transportation
+                  </p>
                 )}
               </div>
 
@@ -259,7 +285,11 @@ const Dashboard = () => {
               >
                 <AnalyticsReportIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
-                  <p className="font-bold textColor6 text-xs">Analytics</p>
+                  <p
+                    className={`font-bold ${selectedPage == "couvrses" ? "text-[#3884ff]" : "textColor6"} hover:text-[#3884ff]! text-xs `}
+                  >
+                    Analytics
+                  </p>
                 )}
               </div>
               <div
@@ -267,32 +297,44 @@ const Dashboard = () => {
               >
                 <BooksIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
-                  <p className="font-bold textColor6 text-xs">
+                  <p
+                    className={`font-bold ${selectedPage == "coursecs" ? "text-[#3884ff]" : "textColor6"} hover:text-[#3884ff]! text-xs `}
+                  >
                     Books and Materials
                   </p>
                 )}
               </div>
-            
+
               <div
                 className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center cursor-pointer`}
                 onClick={() => {
                   setPage("results");
+                  setSelectedPage("results");
                 }}
               >
                 <ContentFilesNewspaperIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
-                  <p className="font-bold textColor6 text-xs">Results</p>
+                  <p
+                    className={`font-bold ${selectedPage == "results" ? "text-[#3884ff]" : "textColor6"} hover:text-[#3884ff]! text-xs `}
+                  >
+                    Results
+                  </p>
                 )}
               </div>
               <div
                 className={`${isSidebarCollapsed ? "w-10 justify-center" : "w-40"} py-1 rounded-md mt-4 flex gap-3 items-center cursor-pointer`}
                 onClick={() => {
                   setPage("account");
+                  setSelectedPage("account");
                 }}
               >
                 <ProfileFillIcon className="h-5 textColor3" />
                 {!isSidebarCollapsed && (
-                  <p className="font-bold textColor6 text-xs">Account</p>
+                  <p
+                    className={`font-bold ${selectedPage == "account" ? "text-[#3884ff]" : "textColor6"} hover:text-[#3884ff]! text-xs `}
+                  >
+                    Account
+                  </p>
                 )}
               </div>
 
@@ -317,15 +359,27 @@ const Dashboard = () => {
                   <div className="bg-[#F6F6F6] w-52 rounded-2xl p-2 mt-5 mb-10">
                     <div className="w-40 py-1 rounded-md mt-4 flex gap-3 pl-1 items-center cursor-pointer">
                       <HelpIcon className="h-5 textColor3" />
-                      <p className="font-bold textColor6 text-xs">Help desk</p>
+                      <p
+                        className={`font-bold ${selectedPage == "coufrses" ? "text-[#3884ff]" : "textColor6"}  text-xs `}
+                      >
+                        Help desk
+                      </p>
                     </div>
                     <div className="w-40 py-1 rounded-md mt-4 flex gap-3 pl-1 items-center cursor-pointer">
                       <SettingsOutlineIcon className="h-5 textColor3" />
-                      <p className="font-bold textColor6 text-xs">Settings</p>
+                      <p
+                        className={`font-bold ${selectedPage == "courwses" ? "text-[#3884ff]" : "textColor6"}  text-xs `}
+                      >
+                        Settings
+                      </p>
                     </div>
                     <div className="w-40 py-1 rounded-md mt-4 flex gap-3 pl-1 items-center cursor-pointer">
                       <LogoutSolidIcon className="h-5 textColor3" />
-                      <p className="font-bold textColor6 text-xs">Logout</p>
+                      <p
+                        className={`font-bold ${selectedPage == "couarses" ? "text-[#3884ff]" : "textColor6"}  text-xs `}
+                      >
+                        Logout
+                      </p>
                     </div>
                   </div>
                 </>

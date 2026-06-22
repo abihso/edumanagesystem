@@ -25,7 +25,7 @@ const HomePage = ({ isSidebarCollapsed }: HomeProps) => {
                   </p>
                 </div>
                 <div>
-                  <img className="h-50 -mt-25" src={Images[3]} alt="" />
+                  <img className="h-50 -mt-20" src={Images[3]} alt="" />
                 </div>
               </div>
               <div className="grid grid-cols-12 gap-4 mt-4">
