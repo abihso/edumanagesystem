@@ -1,6 +1,6 @@
 import AccountGraduationIcon from "@iconify-react/mdi/account-graduation";
 import Images from "../assets/images";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   let navigate = useNavigate();
 
