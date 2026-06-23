@@ -37,6 +37,16 @@ const FeesPage = ({ isSidebarCollapsed }: HomeProps) => {
   const [showDialogBox, setShowDialogBox] = useState(false);
   const [showPage, setShowPage] = useState("main");
   const [showComfirmDialogBox, setShowComfirmDialogBox] = useState(false);
+  const [selectPaymentMethod, setSelectMethod] = useState("credit")
+  const [momo, setMomo] = useState("")
+  const [comfirmPayment, setComfirmPayment] = useState(false); 
+  const [visaData, setVisaData] = useState({
+    creditCardNumber: "",
+    cvv: "",
+    valid_thru1: "",
+    valid_thru2: "",
+    name: "",
+  }); 
   const handleSubmit = () => {
     setShowDialogBox(false);
     setShowComfirmDialogBox(true);
@@ -682,10 +692,16 @@ const FeesPage = ({ isSidebarCollapsed }: HomeProps) => {
                 <p className="font-bold">Select Payment Method</p>
                 <div className="flex mt-4 justify-between gap-3">
                   <div className="w-full">
-                    <div className="h-25 bg-[#468DFF] rounded-4xl flex justify-between items-center px-5">
+                    <div
+                      className={`h-25 ${selectPaymentMethod == "credit" ? "bg-[#468DFF]" : "bg-[#468dff8c]"}  rounded-4xl flex justify-between items-center px-5`}
+                    >
                       <IdCardRoundedIcon className="text-white h-10" />
                       <p className="text-white font-bold mr-3">Credit Card</p>
-                      <Checkbox className="border-2" />
+                      <Checkbox
+                        className="border border-white! bg-transparent!"
+                        checked={selectPaymentMethod == "credit"}
+                        onCheckedChange={() => setSelectMethod("credit")}
+                      />
                     </div>
                     <p className="font-bold my-10">Enter Card Details</p>
                     <div>
@@ -701,6 +717,18 @@ const FeesPage = ({ isSidebarCollapsed }: HomeProps) => {
                           type="text"
                           name=""
                           id=""
+                          disabled={selectPaymentMethod != "credit"}
+                          value={
+                            selectPaymentMethod == "momo"
+                              ? ""
+                              : visaData.creditCardNumber
+                          }
+                          onChange={(e) =>
+                            setVisaData({
+                              ...visaData,
+                              creditCardNumber: e.target.value,
+                            })
+                          }
                           placeholder="642 ..... ..... ...."
                           className="border-b-3 textColor6 w-full p-3 font-bold"
                         />
@@ -721,12 +749,36 @@ const FeesPage = ({ isSidebarCollapsed }: HomeProps) => {
                               name=""
                               className="w-full p-3 textColor6 border-b-2"
                               id=""
+                              disabled={selectPaymentMethod != "credit"}
+                              value={
+                                selectPaymentMethod == "momo"
+                                  ? ""
+                                  : visaData.valid_thru1
+                              }
+                              onChange={(e) =>
+                                setVisaData({
+                                  ...visaData,
+                                  valid_thru1: e.target.value,
+                                })
+                              }
                             />
                             <input
                               type="text"
                               name=""
                               className="w-full p-3 textColor6 border-b-2"
                               id=""
+                              disabled={selectPaymentMethod != "credit"}
+                              value={
+                                selectPaymentMethod == "momo"
+                                  ? ""
+                                  : visaData.valid_thru2
+                              }
+                              onChange={(e) =>
+                                setVisaData({
+                                  ...visaData,
+                                  valid_thru2: e.target.value,
+                                })
+                              }
                             />
                           </div>
                         </div>
@@ -743,6 +795,16 @@ const FeesPage = ({ isSidebarCollapsed }: HomeProps) => {
                             placeholder="........"
                             className="w-full p-3 border-b-2"
                             id=""
+                            disabled={selectPaymentMethod != "credit"}
+                            value={
+                              selectPaymentMethod == "momo" ? "" : visaData.cvv
+                            }
+                            onChange={(e) =>
+                              setVisaData({
+                                ...visaData,
+                                cvv: e.target.value,
+                              })
+                            }
                           />
                         </div>
                       </div>
@@ -760,15 +822,31 @@ const FeesPage = ({ isSidebarCollapsed }: HomeProps) => {
                           placeholder="Abih Solo"
                           className="w-full p-3 border-b-2"
                           id=""
+                          disabled={selectPaymentMethod != "credit"}
+                          value={
+                            selectPaymentMethod == "momo" ? "" : visaData.name
+                          }
+                          onChange={(e) =>
+                            setVisaData({
+                              ...visaData,
+                              name: e.target.value,
+                            })
+                          }
                         />
                       </div>
                     </div>
                   </div>
                   <div className="w-full">
-                    <div className="h-25 bg-[#468dff8c] rounded-4xl flex justify-between items-center px-5">
+                    <div
+                      className={`h-25 ${selectPaymentMethod == "momo" ? "bg-[#468DFF]" : "bg-[#468dff8c]"}  rounded-4xl flex justify-between items-center px-5`}
+                    >
                       <MoneyPaymentsCurrencyEuroDollarExchangeIcon className="text-white h-10" />
                       <p className="text-white font-bold mr-3">Mobile Money</p>
-                      <Checkbox className="border-2" />
+                      <Checkbox
+                        className="border border-white! bg-transparent!"
+                        checked={selectPaymentMethod == "momo"}
+                        onCheckedChange={() => setSelectMethod("momo")}
+                      />
                     </div>
                     <p className="font-bold my-10">
                       Enter Mobile Money Details
@@ -781,17 +859,24 @@ const FeesPage = ({ isSidebarCollapsed }: HomeProps) => {
                     </label>{" "}
                     <br />
                     <input
-                      type="password"
+                      type="text"
                       name=""
                       placeholder="059 .... .... 82"
                       className="w-full p-3 border-b-2"
                       id=""
+                      disabled={selectPaymentMethod != "momo"}
+                      value={selectPaymentMethod == "credit" ? "" : momo}
+                      onChange={(e) => setMomo(e.target.value)}
                     />
                   </div>
                 </div>
                 <div className="flex justify-between mt-10">
                   <div className="flex gap-2 w-full">
-                    <Checkbox className="border! border-black rounded-sm" />
+                    <Checkbox
+                      className="border  bg-transparent! text-black! border-black rounded-sm"
+                      checked={comfirmPayment}
+                      onCheckedChange={() => setComfirmPayment((pre) => !pre)}
+                    />
                     <p className="text-[8.5px] textColor6 font-bold">
                       YOU ARE ABOUT TO MAKE PAYMENT. ARE SURE OF THE DETAILS?{" "}
                       <span className="text-red-600">
