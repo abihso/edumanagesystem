@@ -16,7 +16,7 @@ import LogoutSolidIcon from "@iconify-react/basil/logout-solid";
 import MessageIcon from "@iconify-react/mage/message";
 import NotificationSolidIcon from "@iconify-react/clarity/notification-solid";
 import MenuIcon from "@iconify-react/material-symbols/menu";
-import DashboardIcon from "@iconify-react/material-symbols/dashboard";
+import DashboardIcon from "@iconify-react/material-symbols/dashboard"; 
 import ArrowDropdownIcon from "@iconify-react/nrk/arrow-dropdown";
 import SearchIcon from "@iconify-react/tdesign/search";
 import CloseIcon from "@iconify-react/material-symbols/close";
@@ -32,29 +32,35 @@ import FeesPage from "../../pages/feesPage";
 import SchedulePage from "../../pages/schedulePage";
 import ResultsPage from "../../pages/resultsPage";
 
+
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [page, setPage] = useState("");
   const menuItems = [
-    { icon: DashboardIcon, label: "Dashboard" },
-    { icon: ContentFilesNewspaperIcon, label: "My Courses" },
-    { icon: CartIcon, label: "Assignments" },
-    { icon: ScheduleIcon, label: "Schedule" },
-    { icon: PerformanceIcon, label: "Performance" },
-    { icon: GraphNewOutlineIcon, label: "AI Learning Path" },
+    { icon: DashboardIcon, label: "Dashboard", page: "home" },
+    { icon: ContentFilesNewspaperIcon, label: "My Courses", page: "courses" },
+    { icon: CartIcon, label: "Assignments", page: "assignment" },
+    { icon: ScheduleIcon, label: "Schedule", page: "schedule" },
+    { icon: PerformanceIcon, label: "Performance", page: "performance" },
+    { icon: GraphNewOutlineIcon, label: "AI Learning Path", page: "ai" },
     {
       icon: MoneyPaymentsCurrencyEuroDollarExchangeIcon,
       label: "Fees and Payments",
+      page: "fees",
     },
-    { icon: TransportIcon, label: "Transportation" },
-    { icon: AnalyticsReportIcon, label: "Analytics" },
-    { icon: BooksIcon, label: "Books and Materials" },
-    { icon: ContentFilesNewspaperIcon, label: "Results" },
-    { icon: ProfileFillIcon, label: "Account" },
+    {
+      icon: TransportIcon,
+      label: "Transportation",
+      page: "transportation",
+    },
+    { icon: AnalyticsReportIcon, label: "Analytics", page: "home" },
+    { icon: BooksIcon, label: "Books and Materials", page: "home" },
+    { icon: ContentFilesNewspaperIcon, label: "Results", page: "results" },
+    { icon: ProfileFillIcon, label: "Account", page: "account" },
   ];
 
-  const pageSelector = (p: String) => {
+  const pageSelector = (p: string) => {
     if (p == "home") {
       return <HomePage isSidebarCollapsed={isSidebarCollapsed} />;
     } else if (p == "courses") {
@@ -79,7 +85,6 @@ const Dashboard = () => {
       return <HomePage isSidebarCollapsed={isSidebarCollapsed} />;
     }
   };
-
   const [selectedPage, setSelectedPage] = useState("");
 
   return (
@@ -429,6 +434,10 @@ const Dashboard = () => {
                 {menuItems.map((item, idx) => (
                   <div
                     key={idx}
+                    onClick={() => {
+                      setPage(item.page);
+                      setIsSidebarOpen(false);
+                    }}
                     className="w-full py-2 rounded-md mt-2 flex gap-3 pl-2 items-center cursor-pointer hover:bg-gray-50"
                   >
                     <item.icon className="h-5 textColor3" />
@@ -467,176 +476,7 @@ const Dashboard = () => {
             </div>
           </>
         )}
-
-        <div className="px-4 py-3 pb-24 overflow-y-auto mt-15">
-          {/* Breadcrumb */}
-          <p className="text-[#B8B8B8] font-bold text-xs">
-            Student Dashboard / <span className="text-black">Overview</span>
-          </p>
-
-          <div className="gradient5 rounded-2xl p-4 mt-3 relative overflow-hidden">
-            <div>
-              <p className="font-bold text-xl">
-                Welcome back, <span>Abih Solo</span>
-              </p>
-              <p className="text-[11px] font-semibold mt-1">
-                you've completed 85% of your homeworks goals this month!
-              </p>
-            </div>
-            <div className="absolute right-0 bottom-0">
-              <img className="h-24 opacity-80" src={Images[3]} alt="" />
-            </div>
-          </div>
-
-          <div className="mt-4">
-            <div className="flex items-center bg-white rounded-xl px-3 py-2 shadow-sm">
-              <SearchIcon className="h-4 text-gray-400" />
-              <input
-                type="search"
-                placeholder="Search courses, assignments..."
-                className="flex-1 ml-2 text-sm outline-none"
-              />
-            </div>
-          </div>
-
-          <div className="gradient6 rounded-2xl p-4 mt-4">
-            <p className="font-bold">Academic Performance</p>
-            <div className="flex justify-center my-3">
-              <div className="w-32 h-32 rounded-full gradient7 flex items-center justify-center">
-                <div className="w-24 h-24 bg-[#EFEFEF] rounded-full flex items-center justify-center">
-                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center">
-                    <p className="font-bold text-2xl textColor1">78%</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="flex items-center justify-between">
-              <p className="font-bold bg-[#D2DEFF] px-2 py-1 rounded-md text-xs">
-                Current GPA: <span className="textColor6">3.7</span>
-              </p>
-              <p className="text-[10px] font-bold text-[#00C06D]">
-                ↑ +0.2 from last sem
-              </p>
-            </div>
-          </div>
-
-          {/*.*/}
-          <div className="flex gap-3 overflow-x-auto mt-4 pb-2 scrollbar-hide">
-            <div className="min-w-70 bg-white rounded-2xl p-3 shadow-sm">
-              <div className="flex justify-between items-center">
-                <p className="font-bold text-sm">Latest Notice</p>
-                <p className="text-[#3884FF] text-xs font-bold">View all</p>
-              </div>
-              <div className="flex gap-2 mt-2">
-                <div className="w-12 h-12 bg-[#D9D9D9] rounded-xl flex items-center justify-center">
-                  <img src={Images[4]} className="h-8 rounded-lg" alt="" />
-                </div>
-                <div>
-                  <p className="font-bold text-sm">@Accountant</p>
-                  <p className="text-[11px] text-gray-500">
-                    +5% increase in next academic year's fees
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="min-w-70 bg-white rounded-2xl p-3 shadow-sm">
-              <p className="font-bold text-sm">AI Recommendation</p>
-              <div className="bg-[#EBF3FF] rounded-xl p-2 mt-2">
-                <p className="font-bold text-xs bg-[#D2DEFF] inline-block px-2 py-0.5 rounded">
-                  Study Suggestion
-                </p>
-                <p className="text-[10px] mt-1">
-                  Focus on Algebra this week based on your recent performance
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl p-3 mt-4 shadow-sm">
-            <p className="font-bold">Your Courses</p>
-            <p className="text-[9px] textColor6">
-              Based on current GES curriculum
-            </p>
-            {[
-              {
-                name: "Mathematics",
-                code: "MATH303",
-                teacher: "Sir Antwi Boasiako",
-                progress: 40,
-                lessons: "7/23",
-              },
-              {
-                name: "Integrated Science",
-                code: "SCS303",
-                teacher: "Sir Kusi Boasiako",
-                progress: 20,
-                lessons: "3/13",
-              },
-              {
-                name: "Creative and Perform Art",
-                code: "CPA356",
-                teacher: "Madam Lizy",
-                progress: 78,
-                lessons: "19/65",
-              },
-              {
-                name: "Religious and Moral Education",
-                code: "RME356",
-                teacher: "Madam Vida",
-                progress: 83,
-                lessons: "83/100",
-              },
-            ].map((course, idx) => (
-              <div key={idx} className="bg-[#EBF3FF] rounded-xl p-3 mt-3">
-                <p className="font-bold text-sm">{course.name}</p>
-                <div className="flex justify-between items-center">
-                  <p className="text-xs">
-                    {course.code} | {course.teacher}
-                  </p>
-                  <p className="text-[10px] textColor6">
-                    {course.lessons} Lessons
-                  </p>
-                </div>
-                <progress
-                  value={course.progress}
-                  max={100}
-                  className="w-full rounded-full h-2 mt-2
-                  [&::-webkit-progress-bar]:bg-gray-200 
-                  [&::-webkit-progress-value]:bg-[#2F88FF]
-                  [&::-webkit-progress-value]:rounded-full"
-                />
-              </div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-2 gap-3 mt-4">
-            <div className="bg-[#F3FCF4] rounded-2xl p-3">
-              <p className="font-bold text-sm">Linked Teachers</p>
-              <div className="flex items-center gap-2 mt-2 bg-[#D9D9D9] p-2 rounded-xl">
-                <img src={Images[2]} className="h-8 w-8 rounded-full" alt="" />
-                <div>
-                  <p className="text-[11px] font-bold">Mr Godfred</p>
-                  <p className="text-[9px]">English</p>
-                </div>
-              </div>
-            </div>
-            <div className="gradient8 rounded-2xl p-3">
-              <p className="font-bold text-sm">Attendance</p>
-              <div className="flex justify-between mt-2">
-                <span className="text-xs">Today</span>
-                <div className="w-4 h-4 bg-[#64E727] rounded"></div>
-              </div>
-              <div className="flex justify-between mt-1">
-                <span className="text-xs">Tuesday</span>
-                <div className="w-4 h-4 bg-[#64E727] rounded"></div>
-              </div>
-              <div className="flex justify-between mt-1">
-                <span className="text-xs">Friday</span>
-                <div className="w-4 h-4 bg-[#F41616] rounded-full"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {pageSelector(page)}
       </div>
     </>
   );
@@ -644,5 +484,3 @@ const Dashboard = () => {
 
 export default Dashboard;
 
-//0256436701
-//0533111917

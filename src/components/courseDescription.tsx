@@ -2,9 +2,9 @@ import BooksIcon from '@iconify-react/tabler/books';
 import BookOpenIcon from '@iconify-react/boxicons/book-open';
 import AnalyticsReportIcon from '@iconify-react/fluent-mdl2/analytics-report';
 interface CourseDescriptionProps {
-  setShowDialogBox : (v : Boolean) => void
-  courseCode : String
-  setCode : (v : String) => void
+  setShowDialogBox : (v : boolean) => void
+  courseCode : string
+  setCode : (v : string) => void
 }
 const CourseDescription = ({setShowDialogBox, courseCode, setCode}:CourseDescriptionProps) => {
   
