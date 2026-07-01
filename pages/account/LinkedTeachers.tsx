@@ -29,7 +29,7 @@ const LinkedTeachers = () => {
 
       {/* Teachers Grid - Responsive */}
       <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-3 mb-7">
-        {teachers.map((teacher, index) => (
+        {teachers.map((_, index) => (
           <div
             key={index}
             className="col-span-1 shadow-[0_0_50px_-12px_rgba(0,0,0,0.25)] rounded-2xl flex flex-col sm:flex-row p-3 sm:p-0"
